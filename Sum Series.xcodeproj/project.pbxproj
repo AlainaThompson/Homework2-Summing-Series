@@ -17,12 +17,8 @@
 		091973E027A46F4A009B899E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973B627A46F47009B899E /* ContentView.swift */; };
 		091973E127A46F4A009B899E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091973B727A46F49009B899E /* Assets.xcassets */; };
 		091973E227A46F4A009B899E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091973B727A46F49009B899E /* Assets.xcassets */; };
-		091973F227A46F5E009B899E /* S1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973F127A46F5E009B899E /* S1.swift */; };
-		091973F327A46F5E009B899E /* S1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973F127A46F5E009B899E /* S1.swift */; };
-		091973F527A477D4009B899E /* S2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973F427A477D3009B899E /* S2.swift */; };
-		091973F627A477D4009B899E /* S2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973F427A477D3009B899E /* S2.swift */; };
-		091973F827A477DE009B899E /* S3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973F727A477DE009B899E /* S3.swift */; };
-		091973F927A477DE009B899E /* S3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091973F727A477DE009B899E /* S3.swift */; };
+		0919748827A8441C009B899E /* Series Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919748727A8441C009B899E /* Series Models.swift */; };
+		0919748927A8441C009B899E /* Series Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919748727A8441C009B899E /* Series Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +51,7 @@
 		091973D527A46F4A009B899E /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		091973D927A46F4A009B899E /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		091973DB27A46F4A009B899E /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		091973F127A46F5E009B899E /* S1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S1.swift; sourceTree = "<group>"; };
-		091973F427A477D3009B899E /* S2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S2.swift; sourceTree = "<group>"; };
-		091973F727A477DE009B899E /* S3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3.swift; sourceTree = "<group>"; };
+		0919748727A8441C009B899E /* Series Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series Models.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +102,8 @@
 			children = (
 				091973B527A46F47009B899E /* Sum_SeriesApp.swift */,
 				091973B627A46F47009B899E /* ContentView.swift */,
-				091973F427A477D3009B899E /* S2.swift */,
-				091973F727A477DE009B899E /* S3.swift */,
+				0919748727A8441C009B899E /* Series Models.swift */,
 				091973B727A46F49009B899E /* Assets.xcassets */,
-				091973F127A46F5E009B899E /* S1.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -311,11 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091973F527A477D4009B899E /* S2.swift in Sources */,
 				091973DF27A46F4A009B899E /* ContentView.swift in Sources */,
 				091973DD27A46F4A009B899E /* Sum_SeriesApp.swift in Sources */,
-				091973F827A477DE009B899E /* S3.swift in Sources */,
-				091973F227A46F5E009B899E /* S1.swift in Sources */,
+				0919748827A8441C009B899E /* Series Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,11 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091973F627A477D4009B899E /* S2.swift in Sources */,
 				091973E027A46F4A009B899E /* ContentView.swift in Sources */,
 				091973DE27A46F4A009B899E /* Sum_SeriesApp.swift in Sources */,
-				091973F927A477DE009B899E /* S3.swift in Sources */,
-				091973F327A46F5E009B899E /* S1.swift in Sources */,
+				0919748927A8441C009B899E /* Series Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

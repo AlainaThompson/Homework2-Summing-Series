@@ -51,21 +51,21 @@ struct ContentView: View {
                 
             }
             
-            Button("Calculate", action: {Task.init { await self.calculateCircle()}})
+            Button("Calculate", action: {Task.init { await self.calculateS1()}})
                 .padding(.bottom)
                 .padding()
-                .disabled(circleModel.enableButton == false)
+                .disabled(series1Model.enableButton == false)
             
             
         }
         
     }
     
-    func calculateCircle() async {
+    func calculateSeries1() async {
         
-        circleModel.setButtonEnable(state: false)
+        series1Model.setButtonEnable(state: false)
         
-        let _ : Bool = await circleModel.initWithRadius(passedRadius: Double(radiusString)!)
+        let _ : Bool = await series1Model.initWithRadius(passedRadius: Double(radiusString)!)
         
         
     
