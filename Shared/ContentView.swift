@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject private var series1Model = Series1()
-    @State var nString = "1.0"
-    @State var NString = "100.0"
+    @ObservedObject private var seriesModel = Series()
+    @State var nString = "1"
+    @State var NString = "100"
     
     var body: some View {
         
@@ -19,7 +19,7 @@ struct ContentView: View {
             Text("N")
                 .padding(.top)
                 .padding(.bottom, 0)
-            TextField("Enter N", text: $NString, onCommit: {Task.init {await self.S1(); await self.S2(); await self.S3()}})
+            TextField("Enter N", text: $NString, onCommit: {Task.init {await self.calculateSeries()}})
                 .padding(.horizontal)
                 .frame(width: 100)
                 .padding(.top, 0)
@@ -28,51 +28,90 @@ struct ContentView: View {
         
             HStack{
                 VStack{
-            Text("Series 1")
+            Text("Series 1 Sum")
                 .padding(.bottom, 0)
-            TextField("", text: ( $series1Model.series1Text))
+            TextField("", text: ( $seriesModel.totalS1Text))
                 .padding(.horizontal)
                 .frame(width: 100)
                 .padding(.top, 0)
                 .padding(.bottom, 30)
+                    
+            Text("Series 2 Sum")
+                .padding(.bottom, 0)
+            TextField("", text: ( $seriesModel.totalS2Text))
+                .padding(.horizontal)
+                .frame(width: 100)
+                .padding(.top, 0)
+                .padding(.bottom, 30)
+                    
+            Text("Series 3 Sum")
+                .padding(.bottom, 0)
+            TextField("", text: ( $seriesModel.totalS3Text))
+                .padding(.horizontal)
+                .frame(width: 100)
+                .padding(.top, 0)
+                .padding(.bottom, 30)
+                    
+                    
+                    
+                    
+                    
+                    
                 }
                 VStack{
-                    Text("Series 1")
+                    Text("Series 1 Sum")
                         .padding(.bottom, 0)
-                    Text("\(series1Model.S1, specifier: "%.2f")")
+                    Text("\(seriesModel.totalS1, specifier: "%.2f")")
                         .padding(.horizontal)
                         .frame(width: 100)
                         .padding(.top, 0)
                         .padding(.bottom,30)
                         
+                    Text("Series 2 Sum")
+                        .padding(.bottom, 0)
+                    Text("\(seriesModel.totalS2, specifier: "%.2f")")
+                        .padding(.horizontal)
+                        .frame(width: 100)
+                        .padding(.top, 0)
+                        .padding(.bottom,30)
+                    
+                    Text("Series 3 Sum")
+                        .padding(.bottom, 0)
+                    Text("\(seriesModel.totalS3, specifier: "%.2f")")
+                        .padding(.horizontal)
+                        .frame(width: 100)
+                        .padding(.top, 0)
+                        .padding(.bottom,30)
+                    
+                    
                     }
 
                 
                 
             }
             
-            Button("Calculate", action: {Task.init { await self.calculateS1()}})
+            Button("Calculate", action: {Task.init { await self.calculateSeries()}})
                 .padding(.bottom)
                 .padding()
-                .disabled(series1Model.enableButton == false)
+                .disabled(seriesModel.enableButton == false)
             
             
         }
         
     }
     
-    func calculateSeries1() async {
+    func calculateSeries() async {
         
-        series1Model.setButtonEnable(state: false)
+        seriesModel.setButtonEnable(state: false)
         
-        let _ : Bool = await series1Model.initWithRadius(passedRadius: Double(radiusString)!)
+        let _ : Bool = await seriesModel.initWithSeries(n: Int(nString)!, N: Int(NString)!)
         
-        
+    }
     
 
 }
     
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
