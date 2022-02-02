@@ -42,14 +42,17 @@ class Series: NSObject, ObservableObject {
     
     func calculateS1(N: Int) async -> Double {
         
+        //  __ 2N         n   n
+        //  \        ( - 1) -----
+        //  /__ n=1         n + 1
         
         for n in stride(from: 0, through: 2*N, by: 1) {
-            var pow1: Int
-            pow1 = pow(-1, n)
-            let numerator1 = pow1*n
+            
+            let pow1 = pow(-1, n)
+            let numerator1 = Double(pow1)*Double(n)
             let denominator1 = n + 1
             let sum1 = numerator1/denominator1
-            let n = n + 1
+           
             totalS1 += Double(sum1)
         }
         let newTotalS1Text = String(format: "%7.5f", totalS1)
@@ -64,6 +67,9 @@ class Series: NSObject, ObservableObject {
     
     func calculateS2(N: Int) async -> Double {
             
+        //     __ N   2n - 1       __ N      2n
+        // -  \       ------  +   \        ------
+        //    /__ n=1   2n        /__ n=1  2n + 1
           
             for n in stride(from: 0, through: N, by: 1) {
                 let numerator2a = 2*n - 1
@@ -73,7 +79,7 @@ class Series: NSObject, ObservableObject {
                 let denominator2b = 2*n + 1
                 let sum2b = numerator2b/denominator2b
                 let sum2 = sum2b - sum2a
-                let n = n + 1
+                
                 totalS2 += Double(sum2)
             }
             let newTotalS2Text = String(format: "%7.5f", totalS2)
@@ -87,12 +93,16 @@ class Series: NSObject, ObservableObject {
     
         func calculateS3(N: Int) async -> Double {
             
+            //   __ N        1
+            //  \       ----------
+            //  /__ n=1 2n(2n + 1)
+            
           
             for n in stride(from: 0, through: N, by: 1) {
                 let denominator3a = 2*n
                 let denominator3b = 2*n + 1
                 let sum3 = 1/(denominator3a*denominator3b)
-                let n = n + 1
+               
                 totalS3 += Double(sum3)
             }
             let newTotalS3Text = String(format: "%7.5f", totalS3)
