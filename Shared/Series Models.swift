@@ -10,7 +10,7 @@ import SwiftUI
 class Series: NSObject, ObservableObject {
     
     var n = 0
-    var N = 100
+    var Number = 100
     var totalS1 = 0.0
     var totalS2 = 0.0
     var totalS3 = 0.0
@@ -25,15 +25,15 @@ class Series: NSObject, ObservableObject {
     @Published var enableButton = true
     
     func initWithSeries(n: Int, N: Int) async -> Bool {
-            
+        Number = N
                 
                 let _ = await withTaskGroup(of:  Void.self) { taskGroup in
                     
             
                 
-                    taskGroup.addTask { let _ = await self.calculateS1(N: Int(self.N))}
-                    taskGroup.addTask { let _ = await self.calculateS2(N: Int(self.N))}
-                    taskGroup.addTask { let _ = await self.calculateS3(N: Int(self.N))}
+                    taskGroup.addTask { let _ = await self.calculateS1(N: Int(self.Number))}
+                    taskGroup.addTask { let _ = await self.calculateS2(N: Int(self.Number))}
+                    taskGroup.addTask { let _ = await self.calculateS3(N: Int(self.Number))}
                 
             }
     
